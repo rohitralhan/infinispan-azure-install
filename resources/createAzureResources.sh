@@ -107,7 +107,7 @@ do
 
         PRIVATE_IP=$(az vm list-ip-addresses --name $vmWeb$i --query "[0].virtualMachine.network.privateIpAddresses[0]" -o tsv)
         PRIVATE_IPS=$PRIVATE_IPS$PRIVATE_IP"[7800]"
-        CMD_TO_RUN=$CMD_TO_RUN"\n Command for $vmWeb$i \n scp infinispan.xml setup-vm.sh dguser@$PUBLIC_IP: \n ssh dguser@$PUBLIC_IP \n chmod +x setup-vm.sh \n ./setup-vm.sh \n ./infinispan-server-14.0.7.Final/bin/server.sh -b 0.0.0.0 \n"
+        CMD_TO_RUN=$CMD_TO_RUN"\n Command for $vmWeb$i \n scp infinispan.xml setup-vm.sh dguser@$PUBLIC_IP: \n ssh dguser@$PUBLIC_IP \n chmod +x setup-vm.sh \n ./setup-vm.sh \n ./infinispan/bin/server.sh -b 0.0.0.0 \n"
         if [ $i != $numVM ]; then
                 PRIVATE_IPS=$PRIVATE_IPS","
         fi
