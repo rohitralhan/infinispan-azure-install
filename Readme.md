@@ -50,6 +50,6 @@ Once ```createAzureResource.sh```completes it outputs the below commands for all
  - Login to the Infinispan console using the PUBLIC IP of the Load Balancer using the URL ```http://<<LB Public IP>>:111222/```
  - When prompted used the ```username``` and ```password``` ```developer/developer```
 
-![enter image description here](images/InfinispanConsoleLogin_.png)
+![enter image description here](images/InfinispanConsoleLogin.png)
 
 ![enter image description here](images/InfinispanConsole.png)
