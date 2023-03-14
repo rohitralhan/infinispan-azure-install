@@ -3,7 +3,7 @@
 INFINISPAN_VERSION=14.0.7.Final
 INFINISPAN_FILENAME=infinispan-server-$INFINISPAN_VERSION
 
-echo "Configuring the VM please wiat..."
+echo "Configuring the VM please wait..."
 sudo yum install java-17-openjdk-devel -y -q
 printf "export JAVA_HOME=/usr/lib/jvm/jre \nexport PATH=$JAVA_HOME/bin:$PATH" | sudo tee -a /etc/bashrc
 source /etc/bashrc
