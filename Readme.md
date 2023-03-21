@@ -44,13 +44,13 @@ Once ```createAzureResource.sh```completes it outputs the below commands for all
  - Login to each VM using the **```ssh dguser@<<PUBLIC_IP>>```** command (public ip of the VM will be populated). When prompted use ```GRIDP@ssw0rd``` to login into the VM.
  - Once logged in run the **```chmod +x setup-vm.sh```** command to give the copied ```setup-vm.sh``` to the execute permissions.
  - Run the **```./setup-vm.sh```**, this will install and configure ```Infinispan```. Below tasks are completed by this script:
-		 - Install Open JDK 17
-		 - Add firewall rules for running Infinispan
-		 - Download and configure Infinispan
-		 - Create a user (developer/developer) in Infinispan - this will be used for logging in once the infinispan server is up and running
-		 - Setup the infinispan.xml
-		 - Create the data folder for Infinispan
-		 - Partition, Format and Mount the data disk created for the Azure VM
+	- Install Open JDK 17
+	- Add firewall rules for running Infinispan
+	- Download and configure Infinispan
+	- Create a user (developer/developer) in Infinispan - this will be used for logging in once the infinispan server is up and running
+	- Setup the infinispan.xml
+	- Create the data folder for Infinispan
+	- Partition, Format and Mount the data disk created for the Azure VM
  - Run the Infinispan server using **```./infinispan/bin/server.sh -b 0.0.0.0```**
  - Login to the Infinispan console using the PUBLIC IP of the Load Balancer using the URL ```http://<<LB Public IP>>:111222/```
  - When prompted used the ```username``` and ```password``` ```developer/developer```
