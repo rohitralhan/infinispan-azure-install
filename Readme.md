@@ -2,9 +2,9 @@
 # Installing and Running Infinispan on Azure
 
 **What is Infinispan?**
-Infinispan is an open-source in-memory (key/value) data grid that provides fast data access with distributed caching capabilities. It can be used to store data in memory and offload the database for read-heavy applications. This tutorial we will see how to install and configure Infinispan on an Azure cloud platform in a three-node replicated cluster.
+Infinispan is an open-source in-memory (key/value) data grid that provides fast data access with distributed caching capabilities. It can be used to store data in memory and offload the database for read-heavy applications. This tutorial will show how to install and configure Infinispan on an Azure cloud platform in a three-node replicated cluster.
 
-Infinispan is primarily used as a cache to improve system performance by reducing bottlenecks in apps and databases or even disk-based NoSQL stores. Infinispan also offers distributed caching to enhance cache coherency in clustered applications where data consistency is crucial. It can also work as a high performant NoSQL-based data store and can persist data to permanent stores using cache stores.
+Infinispan is primarily used as a cache to improve system performance by reducing bottlenecks in apps and databases or even disk-based NoSQL stores. Infinispan also offers distributed caching to enhance cache coherency in clustered applications where data consistency is crucial. It can also work as a high-performant NoSQL-based data store and can persist data to permanent stores using cache stores.
 
 More details can be found @ https://infinispan.org/documentation/
 
@@ -21,7 +21,7 @@ More details can be found @ https://infinispan.org/documentation/
 ![enter image description here](./images/AzureInfiniArchi.png)
 
 
-Infinispan supports various types of cache modes. In this tutorial, we will look at setting up Infinispan with replicated cache on Azure. As you can see in the diagram above there are Infinispan 3 nodes deployed on 3 Azure VMs. To access Infinispan we will use the external public IP of the Load Balancer. The diagram also shows 3 public ips belonging to each VM these are only needed for setting up Infinispan, once the server is up and running we can delete them and still be able to access the Infinispan cluster.
+Infinispan supports various types of cache modes. This tutorial, will look at setting up Infinispan with replicated cache on Azure. As you can see in the diagram above there are Infinispan 3 nodes deployed on 3 Azure VMs. To access Infinispan we will use the external public IP of the Load Balancer. The diagram also shows 3 public ips belonging to each VM these are only needed for setting up Infinispan, once the server is up and running we can delete them and still be able to access the Infinispan cluster.
 JGroups is an essential component of Infinispan, serving as the network transport layer that facilitates cluster formation and communication among nodes in a distributed system. Infinispan leverages JGroups to form a cluster of nodes, allowing them to communicate and share data seamlessly.
 
 
@@ -50,11 +50,11 @@ Once ```createAzureResource.sh```completes it outputs the below commands for all
 	- Create a user (developer/developer) in Infinispan - this will be used for logging in once the infinispan server is up and running
 	- Setup the infinispan.xml
 	- Create the data folder for Infinispan
-	- Partition, Format and Mount the data disk created for the Azure VM
+	- Partition, Format, and Mount the data disk created for the Azure VM
  - Run the Infinispan server using **```./infinispan/bin/server.sh -b 0.0.0.0```**
  - Login to the Infinispan console using the PUBLIC IP of the Load Balancer using the URL ```http://<<LB Public IP>>:111222/```
  - When prompted used the ```username``` and ```password``` ```developer/developer```
- - First images below show what the Infinispan Login screen will look like when you click on  ```Open the console``` button and once logged in the second screen showin in the second image will appear.
+ - First images below show what the Infinispan Login screen will look like when you click on  ```Open the console``` button once logged in the second screen showing in the second image will appear.
 
 
 
